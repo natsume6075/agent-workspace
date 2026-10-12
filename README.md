@@ -5,10 +5,13 @@
 
 ## 起動
 
+clone先は任意です。上記は現在のディレクトリにcloneする例で、特定の絶対パスは要求しません。
+
 WSL2 UbuntuにおけるOS・Node.js・Codexの導入は [setup](https://github.com/natsume6075/setup/tree/feat/add-agent-harness/linux) が担当する。
 
 ```bash
-cd ~/workspace/agent-workspace
+git clone https://github.com/natsume6075/agent-workspace.git
+cd agent-workspace
 codex
 ```
 
