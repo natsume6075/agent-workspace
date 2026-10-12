@@ -11,6 +11,7 @@
 - GitHubの `natsume6075/setup` に `feat/add-agent-harness` を作成。Draft [PR #2](https://github.com/natsume6075/setup/pull/2) を開いている。**master未マージ**。
 - PRレビューでセットアップ方式を既存方式に統一した。`setup/linux/setup.sh` の `AppsToSetup` に `agent-workspace` を追加。`agent-workspace/setup.sh` がNode LTS・Codexのインストールを担当し、独立した `setup-agent-harness.sh` は削除済み。
 - `setup/win/README.md` はUbuntu 24.04の併設・DNS tunneling・Koofr Windows導線を追記。
+- 2026-10-12の追記レビュー対応: `setup/linux/setup.sh` のcurl取得はGitHub API経由の各リポジトリ既定ブランチtarballに変更し、`linux/README.md` に追加していた冗長な設計説明を削除。
 - 本 `natsume6075/agent-workspace` はプロジェクトローカルの実行環境。 clone先のパスは任意。 `README.md` と `AGENTS.md` は直下、詳細は `.agents/docs/`、タスク成果物は `projects/`。
 - **ユーザーのWindows/WSLで動作検証は未実施。** 以前Ubuntu 20.04のapt更新で `Temporary failure resolving 'archive.ubuntu.com'` が発生。新ディストリ導入前に旧環境を破壊してはいけない。
 - Koofr Windows desktopとiPhoneのObsidian Koofr Syncを採用。設定・権限・往復同期は実機未完了。
