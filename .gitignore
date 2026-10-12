@@ -1,0 +1,33 @@
+# Credentials / local secrets
+.env
+.env.*
+!.env.example
+**/secrets/
+**/.ssh/
+**/.codex/auth.json
+**/.codex/sessions/
+**/.codex/log/
+**/.codex/logs/
+**/.claude/projects/
+*.pem
+*.key
+
+# Dependencies, caches, build outputs
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/.cache/
+**/dist/
+**/build/
+**/target/
+**/.gradle/
+**/.pytest_cache/
+**/coverage/
+**/tmp/
+**/scratch/
+
+# Host/IDE generated
+.DS_Store
+Thumbs.db
+
+# Intentional: AGENTS.md, .agents/, .codex/config.toml and projects/ sources ARE tracked.
