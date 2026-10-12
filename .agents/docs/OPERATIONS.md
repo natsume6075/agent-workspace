@@ -13,7 +13,7 @@ Codexは `AGENTS.md` → `.agents/docs/TASKS.md` → `.agents/docs/HANDOFF.md` �
 ## 新規マシン
 
 - [setup / Windows](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/win/README.md): Windows/WSL/Ubuntu 24.04、DNS、Koofr導入。
-- [setup / Linux](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/linux/README.md): Codex導入とclone、自動化スクリプト。
+- [setup / Linux](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/linux/README.md): `AppsToSetup` でagent-workspaceを取得し、このリポジトリの `setup.sh` を実行。マージ後はmaster参照。
 - [setup Draft PR #2](https://github.com/natsume6075/setup/pull/2) がマージされた場合、リンクをmasterへ変更する。
 
 ## WSL DNS
