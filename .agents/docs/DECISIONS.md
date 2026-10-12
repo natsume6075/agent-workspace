@@ -2,7 +2,7 @@
 
 ## Accepted
 
-- Repository name stays **agent-workspace**, path **`~/workspace/agent-workspace`**.
+- Repository name stays **agent-workspace**. Clone先の絶対パスには制約を設けない。インストーラーの既定パスは単なる初期値であり、配置要件ではない。
 - Workspace is a full, project-scoped AI agent environment. **No global `~/.codex/AGENTS.md` or global symlink**.
 - Keep `README.md` and `AGENTS.md` at root for humans and automatic instruction loading; put detailed workspace management docs under `.agents/docs/`.
 - Shared agent capabilities belong in `.agents/skills/`; harness-specific config in `.codex/` etc. Don't invent cross-harness settings that don't exist.
