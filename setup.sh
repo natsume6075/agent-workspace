@@ -3,7 +3,7 @@
 # May also be run directly from a cloned agent-workspace repository.
 set -euo pipefail
 
-SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 
 sudo apt-get update
 sudo apt-get install -y curl ca-certificates
