@@ -6,9 +6,9 @@
 |---|---|---|---|
 | BOOT-01 | DONE | agent | `setup` feature branch と Draft PRを準備。 [PR #2](https://github.com/natsume6075/setup/pull/2)。**mergeせず維持**。 |
 | BOOT-02 | DONE | agent | 本リポジトリにルートAGENTS、Codexプロジェクト設定、ガバナンス、引き継ぎ、Gitignoreを配置（GitHub側）。 |
-| ENV-01 | TODO | human | WindowsでWSL更新・Ubuntu 24.04 LTS新規導入・起動と通信確認・既定化。その後、旧WSL Ubuntuの必要データを確認（必要なら `wsl --export` で退避）し、**旧ディストリビューションのみ** `wsl --unregister` で削除、一覧で結果確認。 [setup手順](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/win/README.md)。 |
-| ENV-02 | TODO | joint | Ubuntu 24.04のDNS/apt通信を検証し、旧focalの名前解決エラーを新環境で再現しない。VPN/Proxy要件があれば `setup` 側へ記録。 |
-| ENV-03 | TODO | joint | `setup/linux/setup.sh` の `AppsToSetup` から `agent-workspace` を選択し、clone・`agent-workspace/setup.sh` によるNode LTS・Codexの導入と再実行時の非破壊性を確認。Git cloneとcurl(APIから既定ブランチのtarball)の両方式を検証。 |
+| ENV-01 | TODO | human | WindowsでWSL本体を正式版3.0系へ更新・Ubuntu 26.04 LTS新規導入・起動と通信確認・既定化。その後、旧WSL Ubuntuの必要データを確認（必要なら `wsl --export` で退避）し、**旧ディストリビューションのみ** `wsl --unregister` で削除、一覧で結果確認。 [setup手順](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/win/README.md)。 |
+| ENV-02 | TODO | joint | Ubuntu 26.04のDNS/apt通信を検証し、旧focalの名前解決エラーを新環境で再現しない。VPN/Proxy要件があれば `setup` 側へ記録。 |
+| ENV-03 | TODO | joint | `setup/linux/setup.sh` の `AppsToSetup` から `agent-workspace` を選択し、clone・`agent-workspace/setup.sh` によるNode LTS・Codexの導入と再実行時の非破壊性を確認。Git cloneとcurl(APIから既定ブランチのtarball)の両方式を検証。26.04上でNeovim PPAなど既存のaptパッケージの対応も確認。 |
 | ENV-04 | TODO | human | WSLのCodexで `codex login`、このworkspaceから `codex` の動作・AGENTS.mdの読み込みを実機確認。 |
 | ENV-05 | TODO | agent | 新規セッションが `TASKS.md` と `HANDOFF.md` から問題なくタスク再開できることを試験。 |
 | SYNC-01 | TODO | human | Koofr Windows公式デスクトップを導入・ログインし、同期フォルダを確認。 |
