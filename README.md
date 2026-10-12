@@ -7,7 +7,7 @@
 
 clone先は任意です。上記は現在のディレクトリにcloneする例で、特定の絶対パスは要求しません。
 
-WSL2 UbuntuにおけるOS・Node.js・Codexの導入は [setup](https://github.com/natsume6075/setup/tree/feat/add-agent-harness/linux) が担当する。
+WSL2 Ubuntuの導入・外部リポジトリの取得は [setup](https://github.com/natsume6075/setup/tree/master/linux) が担当する。Codexの依存関係と本体のインストールはこのリポジトリの [`setup.sh`](setup.sh) が担当する。
 
 ```bash
 git clone https://github.com/natsume6075/agent-workspace.git
@@ -52,6 +52,6 @@ agent-workspace/
 
 ## 関連
 
-- [setup / feature branch](https://github.com/natsume6075/setup/tree/feat/add-agent-harness)
+- [setup / master](https://github.com/natsume6075/setup/tree/master)
 - [setup / Draft PR #2](https://github.com/natsume6075/setup/pull/2)
 - [Codexプロジェクト設定](https://developers.openai.com/codex/config-reference/)
