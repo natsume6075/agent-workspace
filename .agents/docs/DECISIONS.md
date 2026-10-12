@@ -8,7 +8,7 @@
 - Shared agent capabilities belong in `.agents/skills/`; harness-specific config in `.codex/` etc. Don't invent cross-harness settings that don't exist.
 - Project work and source-controlled deliverables belong in `projects/`. External Git repositories should normally live beside this repository.
 - Do not commit tokens, auth state, machine-local overrides, caches, transient build outputs.
-- Provisioning belongs in `setup`; its new changes must stay on `feat/add-agent-harness` until user-approved merge.
+- OS/WSL and generic repository orchestration belongs in `setup` (`AppsToSetup`). Each application's own configuration and dependency installation belongs in its repository's `setup.sh`; Codex is installed by `agent-workspace/setup.sh`. Setup changes are reviewed on `feat/add-agent-harness` before user-approved merge.
 - Install Ubuntu **24.04 LTS alongside** existing 20.04. Prefer modern WSL DNS tunneling; preserve corporate network compatibility.
 - Run Koofr's **Windows desktop sync client** under WSL/Windows workflow, not an unnecessary second Koofr Linux client inside WSL. iPhone Obsidian uses **Koofr Sync** plugin, verify on-device.
 - Keep live Git trees off cloud mirror; allow normal Git push/pull plus Koofr for non-Git knowledge/artifacts. Sync is not backup.
