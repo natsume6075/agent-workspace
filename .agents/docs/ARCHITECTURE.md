@@ -8,7 +8,7 @@
 Windows workstation
 ├── WSL2 Ubuntu 24.04
 │   ├── Node LTS / Codex CLI (installed by setup)
-│   └── ~/workspace/agent-workspace/ (this repo)
+│   └── <任意のclone先>/agent-workspace/ (this repo)
 │       ├── README.md / AGENTS.md
 │       ├── .agents/docs, .agents/skills
 │       ├── .codex/config.toml
