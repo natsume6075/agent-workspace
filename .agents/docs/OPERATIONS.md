@@ -12,7 +12,7 @@ Codexは `AGENTS.md` → `.agents/docs/TASKS.md` → `.agents/docs/HANDOFF.md` �
 
 ## 新規マシン
 
-- [setup / Windows](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/win/README.md): Windows/WSL/Ubuntu 24.04、DNS、Koofr導入。
+- [setup / Windows](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/win/README.md): Windows/WSL 3.0系/Ubuntu 26.04、DNS、Koofr導入。
 - [setup / Linux](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/linux/README.md): `AppsToSetup` でagent-workspaceを取得し、このリポジトリの `setup.sh` を実行。マージ後はmaster参照。
 - [setup Draft PR #2](https://github.com/natsume6075/setup/pull/2) がマージされた場合、リンクをmasterへ変更する。
 
@@ -27,7 +27,7 @@ curl -I https://github.com
 sudo apt update
 ```
 
-Windows PowerShell側: `wsl --version` / `wsl --list --verbose` / `wsl --update`。Microsoftの [WSLネットワーク](https://learn.microsoft.com/windows/wsl/networking) と [wsl-config](https://learn.microsoft.com/windows/wsl/wsl-config) を参照。DNS失敗・外向き通信失敗・企業プロキシ要求は別原因として調査する。
+Windows PowerShell側: `wsl --version` （本体3.0系） / `wsl --list --verbose` / `wsl --update`。Microsoftの [WSLネットワーク](https://learn.microsoft.com/windows/wsl/networking) と [wsl-config](https://learn.microsoft.com/windows/wsl/wsl-config) を参照。DNS失敗・外向き通信失敗・企業プロキシ要求は別原因として調査する。
 
 ## 検証の記録
 
