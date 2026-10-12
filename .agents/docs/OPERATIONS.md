@@ -3,7 +3,7 @@
 ## 通常起動
 
 ```bash
-cd ~/workspace/agent-workspace
+# cloneしたagent-workspaceのルートディレクトリで実行
 git status --short --branch
 codex
 ```
