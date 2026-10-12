@@ -5,6 +5,21 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 
+# Keep diagnostics beside this script; save files only on failure.
+LOG_DIRECTORY="$SCRIPT_DIR/logs"
+LOG_FILE="$LOG_DIRECTORY/setup-$(date +%Y%m%d-%H%M%S)-$.log"
+INSTALL_STAGE="initialization"
+OnFailure() {
+    local status=$? line="${BASH_LINENO[0]}"
+    trap - ERR
+    mkdir -p -m 700 -- "$LOG_DIRECTORY" || true
+    ( umask 077; printf '[%s] FAIL stage=%s line=%s exit=%s\n' "$(date -Is)" "$INSTALL_STAGE" "$line" "$status" >> "$LOG_FILE" ) || true
+    printf 'FAILED: %s (exit %s). Diagnostics: %s\n' "$INSTALL_STAGE" "$status" "$LOG_FILE" >&2
+    exit "$status"
+}
+trap OnFailure ERR
+
+
 # Create the user-facing shortcut before installing dependencies, so failures
 # during Node/Codex setup cannot silently prevent the shortcut from existing.
 DEFAULT_WORKSPACE_LINK="$HOME/agent-workspace"
@@ -40,10 +55,12 @@ if [ "$(realpath -e -- "$WORKSPACE_LINK")" != "$SCRIPT_DIR" ]; then
 fi
 echo "Workspace path verified: $WORKSPACE_LINK -> $SCRIPT_DIR"
 
+INSTALL_STAGE="system dependencies"
 sudo apt-get update
 sudo apt-get install -y curl ca-certificates
 
 # Install Node.js LTS without changing the system's Node installation.
+INSTALL_STAGE="nvm / Node.js"
 export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
 if [ ! -s "$NVM_DIR/nvm.sh" ]; then
     curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -54,11 +71,34 @@ nvm install --lts
 nvm alias default 'lts/*'
 nvm use --lts
 
-npm install -g @openai/codex@latest
+INSTALL_STAGE="Codex npm installation"
+# npm output helps diagnose registry/network failures, but persistent logs are
+# written only on failure. Do not let a successful status message hide errors.
+NPM_CAPTURE="$(mktemp)"
+if npm install -g @openai/codex@latest > "$NPM_CAPTURE" 2>&1; then
+    cat -- "$NPM_CAPTURE"
+    rm -f -- "$NPM_CAPTURE"
+else
+    status=$?
+    cat -- "$NPM_CAPTURE" >&2
+    mkdir -p -m 700 -- "$LOG_DIRECTORY"
+    ( umask 077; {
+        printf '[%s] FAIL Codex npm installation (exit=%s)\n' "$(date -Is)" "$status"
+        cat -- "$NPM_CAPTURE"
+    } >> "$LOG_FILE" )
+    rm -f -- "$NPM_CAPTURE"
+    exit "$status"
+fi
+
+INSTALL_STAGE="Codex verification"
+# The setup process must be able to invoke the installed CLI with nvm loaded.
+command -v codex >/dev/null
+codex --version
+npm list -g --depth=0 @openai/codex >/dev/null
 
 
 echo
-echo "Codex installed: $(codex --version)"
+echo "Codex verified: $(codex --version)"
 echo "Workspace: $SCRIPT_DIR"
-echo "Next: open a new shell, cd \"$WORKSPACE_LINK\", run 'codex login', then 'codex'."
+echo "Next: open a new zsh shell (nvm must be initialized), cd \"$WORKSPACE_LINK\", run 'codex login', then 'codex'."
 echo "Project instructions, tasks and handoff are tracked in this repository."
