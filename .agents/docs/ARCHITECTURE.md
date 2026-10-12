@@ -6,7 +6,7 @@
 
 ```text
 Windows workstation
-├── WSL2 Ubuntu 24.04
+├── WSL 3.0系（実行方式WSL2）/ Ubuntu 26.04 LTS
 │   ├── Node LTS / Codex CLI (installed by agent-workspace/setup.sh)
 │   └── <任意のclone先>/agent-workspace/ (this repo)
 │       ├── README.md / AGENTS.md
