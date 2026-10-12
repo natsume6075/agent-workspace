@@ -11,7 +11,7 @@
 - GitHubの `natsume6075/setup` に `feat/add-agent-harness` を作成。Draft [PR #2](https://github.com/natsume6075/setup/pull/2) を開いている。**master未マージ**。
 - `setup/linux/setup-agent-harness.sh` は既存の `linux/setup.sh` と分離し、WSLでのNode LTS・Codex・workspace cloneを担当する。
 - `setup/win/README.md` はUbuntu 24.04の併設・DNS tunneling・Koofr Windows導線を追記。
-- 本 `natsume6075/agent-workspace` はプロジェクトローカルの実行環境。 `~/workspace/agent-workspace` を想定。 `README.md` と `AGENTS.md` は直下、詳細は `.agents/docs/`、タスク成果物は `projects/`。
+- 本 `natsume6075/agent-workspace` はプロジェクトローカルの実行環境。 clone先のパスは任意。 `README.md` と `AGENTS.md` は直下、詳細は `.agents/docs/`、タスク成果物は `projects/`。
 - **ユーザーのWindows/WSLで動作検証は未実施。** 以前Ubuntu 20.04のapt更新で `Temporary failure resolving 'archive.ubuntu.com'` が発生。新ディストリ導入前に旧環境を破壊してはいけない。
 - Koofr Windows desktopとiPhoneのObsidian Koofr Syncを採用。設定・権限・往復同期は実機未完了。
 - 外部サービス連携、リモート操作、自宅サーバー、ローカルLLMは将来フェーズ。インストール済みとみなさない。
@@ -21,7 +21,7 @@
 1. [Windows導入ガイド](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/win/README.md) のUbuntu 24.04手順と、新旧WSL一覧をユーザーが確認できるように案内。
 2. 新Ubuntuで `getent hosts archive.ubuntu.com`、`sudo apt update` を確認。DNS tunneling・VPN・Proxyを原因別に切り分ける。
 3. [Linux導入ガイド](https://github.com/natsume6075/setup/blob/feat/add-agent-harness/linux/README.md) のセットアップ実行を補助。出力を検証。
-4. `codex login`、`cd ~/workspace/agent-workspace && codex` により、AGENTS/プロジェクト設定/タスク台帳読み込みを確認。
+4. `codex login` の後、クローン先で `codex` を起動することで、AGENTS/プロジェクト設定/タスク台帳読み込みを確認。
 5. 実機の証跡を `TASKS.md` に記録し、次のステップを明確にする。
 
 ## 自律的に進めてよいもの
