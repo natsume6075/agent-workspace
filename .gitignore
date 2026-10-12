@@ -31,3 +31,6 @@
 Thumbs.db
 
 # Intentional: AGENTS.md, .agents/, .codex/config.toml and projects/ sources ARE tracked.
+
+# Failure diagnostics beside setup.sh
+/logs/
