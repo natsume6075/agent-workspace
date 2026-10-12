@@ -1,0 +1,4 @@
+# Codex settings for this repository only (trusted projects).
+# Do not put tokens, local endpoints or device-specific provider configuration here.
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
