@@ -1,5 +1,10 @@
 # Codex / ハンズオフ
 
+## 2026-11-01 PR #1のLLM互換スクリプトを削除
+
+- ユーザー指摘を受け、`projects/local-llm/codex-local.sh` と `codex-local-fast.sh` の互換ラッパーも削除。独立した `~/llm/` の本体とPATH登録済みの `~/bin` を使用する。workspace側には移設案内READMEとGit対象外の診断scratchだけを残す。
+- remote-agentはすでに `~/llm/adapters/codex/codex-models.json` を直接参照しており、旧ラッパーに依存しない。以下の「旧入口を保持」は移設時の履歴で、現状の起動経路ではない。
+
 ## 2026-11-01 ローカル成果物をPR提出
 
 - 提出完了: [setup #8](https://github.com/natsume6075/setup/pull/8)（feat/add-agent-harness → master）、[dotfiles #4](https://github.com/natsume6075/dotfiles/pull/4)（feat/local-git-config → master）、[agent-workspace #1 Draft](https://github.com/natsume6075/agent-workspace/pull/1)（feat/local-services-and-handoff → main）。PR-01 DONEは提出まで。今回mergeしていない。各作業ブランチをpushし、作業ツリーを整理済み。setupの2スクリプトもリモートに保存済みとなった。

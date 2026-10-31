@@ -1,5 +1,7 @@
 # ワークスペース共通タスク台帳
 
+- LLM-05: DONE。2026-11-01: PR #1から旧パス用のLLM互換ラッパー2本を削除。起動スクリプトの正本とPATH入口は独立した~/llm・~/binに一本化。workspaceには移設案内を残す。以下のLLM-04/過去ログの互換入口保持は移設時の記録。
+
 ## 2026-11-01 ローカル成果物のPR化
 
 - PR-01: DONE（提出まで、mergeは未実施）。[setup #8](https://github.com/natsume6075/setup/pull/8)にDocker/gh導入、[dotfiles #4](https://github.com/natsume6075/dotfiles/pull/4)にマシン固有Git設定分離、[agent-workspace #1 Draft](https://github.com/natsume6075/agent-workspace/pull/1)にMCP/remote-agent・読み取りルール・移設/整理記録を提出。binのマシン専用リンクはローカルexcludeで保持。モデルカタログ参照を `~/llm/adapters/codex/` へ修正。既存テスト3+14+1件成功。ChatGPT/スマホ/通常Codex quotaの残確認は未完のまま。次はPRレビューとDraftの残検証。
