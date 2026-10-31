@@ -1,0 +1,68 @@
+[
+  {
+    "repo": "natsume6075/setup",
+    "branch": "docs/linux-setup-verification",
+    "sha": "488d14bc0f62f0db464886a2ba192e9c3be9a4b8",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/setup",
+    "branch": "feat/add-agent-harness",
+    "sha": "ac3672a001c67ca2a85b33941e79553377491632",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/setup",
+    "branch": "feat/fetch-setup-and-reuse-lib",
+    "sha": "de15f5fea168fea54d7b9878845d52b687575f05",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/setup",
+    "branch": "feat/self-hosted-lib-bootstrap",
+    "sha": "8a5f2005f9eeb8ce575d9ed04c3c3a073f511e35",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/setup",
+    "branch": "feat/setup-health-checks",
+    "sha": "b9eb7cb6ce721aaed5b4674cd83484c7cf19529c",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/setup",
+    "branch": "fix/propagate-app-setup-failures",
+    "sha": "bbfe709f514e3c8e595a545b67d9bd382083faec",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/setup",
+    "branch": "tmp/refresh-docs-pr5-on-master",
+    "sha": "e19e8af5bb59f8511c4aa1f148b1ac7f66cf76e2",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/dotfiles",
+    "branch": "feature/html-preview",
+    "sha": "fdad0db93d0726ef74e81a93681e695f28181f7b",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/dotfiles",
+    "branch": "feature/shrc_common",
+    "sha": "be9262a4c8f7165111dff0cb8d54196d1cab869b",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/nvim",
+    "branch": "add_os_compatibility",
+    "sha": "1a081f224fdbc419fcf1932e23b658f402d9dd20",
+    "base": "master"
+  },
+  {
+    "repo": "natsume6075/nvim",
+    "branch": "refactoring/neovim-qt",
+    "sha": "343177ff82e1be9b9604adae572653166618ab54",
+    "base": "master"
+  }
+]
