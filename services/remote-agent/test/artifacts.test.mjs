@@ -1,0 +1,31 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { snapshot, captureArtifacts, readArtifact } from '../artifacts.mjs';
+
+test('shell-created artifacts are frozen; private files and symlinks are excluded; integrity is checked', t => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'agent-artifact-test-'));
+  t.after(() => fs.rmSync(temp, { recursive: true, force: true }));
+  const root = path.join(temp, 'workspace'), dest = path.join(temp, 'snapshots');
+  fs.mkdirSync(root);
+  fs.writeFileSync(path.join(root, 'deleted.txt'), 'old');
+  const before = snapshot(root);
+  fs.writeFileSync(path.join(root, 'answer.txt'), 'first result');
+  fs.writeFileSync(path.join(root, '.env'), 'secret');
+  fs.writeFileSync(path.join(temp, 'outside.txt'), 'private');
+  fs.symlinkSync(path.join(temp, 'outside.txt'), path.join(root, 'escape.txt'));
+  fs.writeFileSync(path.join(root, 'large.txt'), 'x'.repeat(40_000));
+  fs.unlinkSync(path.join(root, 'deleted.txt'));
+  const captured = captureArtifacts(root, dest, before);
+  assert.equal(captured.complete, true);
+  assert.deepEqual(captured.changed.sort(), ['answer.txt', 'large.txt']);
+  assert.deepEqual(captured.deleted, ['deleted.txt']);
+  const artifact = captured.artifacts.find(a => a.path === 'answer.txt');
+  fs.writeFileSync(path.join(root, 'answer.txt'), 'later result');
+  assert.equal(readArtifact(dest, artifact).content, 'first result');
+  assert.equal(captured.artifacts.find(a => a.path === 'large.txt').snapshot_available, false);
+  fs.writeFileSync(path.join(dest, artifact.artifact_id), 'tampered');
+  assert.throws(() => readArtifact(dest, artifact), /integrity/);
+});

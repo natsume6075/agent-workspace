@@ -1,0 +1,19 @@
+# Workspace-scoped read-only tools. Shell redirections/compound scripts remain
+# subject to Codex's shell parsing and its fallback approval checks.
+prefix_rule(
+    pattern = [["pwd", "ls", "cat", "head", "tail", "wc", "stat", "readlink", "realpath", "du", "df", "free", "uname", "uptime", "id", "whoami", "ps", "vmstat"]],
+    decision = "allow",
+    justification = "User authorized read-only inspection in agent-workspace; no global permission change.",
+    match = ["cat README.md", "ls -la", "free -h", "ps -eo pid,args"],
+    not_match = ["python3 -c pass", "bash -lc true", "rm file", "git reset --hard", "docker run image"],
+)
+# Do not permit arbitrary git options: diff --output can write, and git can
+# invoke configured helpers. These commands continue to use the sandbox.
+# Do not broadly allow rg --pre, sed -i, awk, interpreters, sudo or Docker.
+prefix_rule(
+    pattern = ["systemctl", "--no-pager", ["status", "show", "is-active", "is-enabled", "is-system-running"]],
+    decision = "allow",
+    justification = "Read service status without starting a pager or changing services.",
+    match = ["systemctl --no-pager status docker", "systemctl --no-pager is-active docker"],
+    not_match = ["systemctl restart docker", "systemctl enable docker", "systemctl --no-pager restart docker"],
+)

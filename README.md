@@ -39,6 +39,12 @@ agent-workspace/
 - KoofrはObsidian Vault・大きい成果物の同期に用い、Gitのワークツリー全体とは二重同期しない。
 - サーバー移行、ローカルLLM、Google/Slack/LINE/MCP、remote-controlは引き継ぎタスクとして管理する。
 
+## ローカルサービス
+
+- [Environment MCP](services/environment-mcp/README.md): WSLのバージョン確認。Secure MCP Tunnelの準備・接続手順。
+- [Remote Agent](services/remote-agent/README.md): 通常CodexまたはローカルLLMへの作業委任。本人承認を維持し、ジョブと成果物をローカル管理する。ChatGPT/スマホ経由の最終検証は未完了。
+- [ローカルLLMの独立管理](projects/local-llm/README.md): 正本は `~/llm/`。起動はPATH上の `codex-local` / `codex-local-fast` を使用する。
+
 ## 運用ドキュメント
 
 - [構成・境界](.agents/docs/ARCHITECTURE.md)
