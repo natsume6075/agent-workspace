@@ -1,5 +1,11 @@
 # Codex / ハンズオフ
 
+## 2026-11-01 全PRマージ後の同期完了
+
+- setup #8 / dotfiles #4 / agent-workspace #1はすべてmerge済み（API確認）。setup master `e31a955`、dotfiles master `37850c0`、workspace main `b8cfbfe`へローカルをfast-forwardした。
+- 作業ブランチfeat/add-agent-harness / feat/local-git-config / feat/local-services-and-handoffはGitHub側で削除済み。ローカルでも削除し、追跡参照をprune。今後は主ブランチから必要な作業ブランチを作る。未統合nvim2本/bin1本は保持。
+- 以下のPRレビュー待ち・Draftは提出時の履歴。次の機能作業はremote-agentのChatGPT/スマホformと通常Codex最終構成の実機確認。mergeは未検証項目の実機成功を意味しない。
+
 ## 2026-11-01 PR #1のLLM互換スクリプトを削除
 
 - ユーザー指摘を受け、`projects/local-llm/codex-local.sh` と `codex-local-fast.sh` の互換ラッパーも削除。独立した `~/llm/` の本体とPATH登録済みの `~/bin` を使用する。workspace側には移設案内READMEとGit対象外の診断scratchだけを残す。
