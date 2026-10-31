@@ -2,6 +2,9 @@
 
 ## 2026-11-01 ローカル成果物をPR提出
 
+- 提出完了: [setup #8](https://github.com/natsume6075/setup/pull/8)（feat/add-agent-harness → master）、[dotfiles #4](https://github.com/natsume6075/dotfiles/pull/4)（feat/local-git-config → master）、[agent-workspace #1 Draft](https://github.com/natsume6075/agent-workspace/pull/1)（feat/local-services-and-handoff → main）。PR-01 DONEは提出まで。今回mergeしていない。各作業ブランチをpushし、作業ツリーを整理済み。setupの2スクリプトもリモートに保存済みとなった。
+- 次は上記PRのレビュー。workspace PRはremote-agentのChatGPT/スマホform・通常Codex最終構成が未検証のためDraft。認証情報、tunnel/.local、モデル・診断生データはGit対象外。既存の未統合nvim2本/bin1本は引き続き保持。
+
 - ユーザーがローカル成果物のPR化まで明示依頼。setupはfeat/add-agent-harness、dotfilesはfeat/local-git-config、agent-workspaceはfeat/local-services-and-handoffへまとめる。
 - remote-agentのカタログ参照にLLM移設後の追従漏れがあり、`~/llm/adapters/codex/codex-models.json`へ修正。environment-mcpとremote-agentの既存テスト3+14件、およびPythonのtunnel設定テスト1件成功。sandbox内の子プロセス制限で失敗後、通常WSL権限で成功した。通常Codex最終構成はquotaで未検証、ChatGPT実接続/スマホformは未確認のまま。
 - dotfilesはghが追記したcredential helperをmode0600の `~/.config/git/local.inc` へ移し、共通.gitconfigからincludeする。移設前後でhelper値一致を確認。トークンは従来のgh認証保存先に残す。binの~/llm起動リンクは `.git/info/exclude` へ登録し、ローカルに保持。

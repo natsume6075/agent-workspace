@@ -2,7 +2,7 @@
 
 ## 2026-11-01 ローカル成果物のPR化
 
-- PR-01: IN_PROGRESS。setupのDocker/gh導入、dotfilesのマシン固有Git設定分離、agent-workspaceのMCP/remote-agent・読み取りルール・移設/整理記録をPR化する。binのマシン専用リンクはローカルexcludeで保持。remote-agentのモデルカタログ参照を `~/llm/adapters/codex/` へ修正。environment MCP 3件、remote agent 14件、tunnel設定1件の既存テスト成功。ChatGPT/スマホ/通常Codex quotaの残確認は未完のまま記録する。
+- PR-01: DONE（提出まで、mergeは未実施）。[setup #8](https://github.com/natsume6075/setup/pull/8)にDocker/gh導入、[dotfiles #4](https://github.com/natsume6075/dotfiles/pull/4)にマシン固有Git設定分離、[agent-workspace #1 Draft](https://github.com/natsume6075/agent-workspace/pull/1)にMCP/remote-agent・読み取りルール・移設/整理記録を提出。binのマシン専用リンクはローカルexcludeで保持。モデルカタログ参照を `~/llm/adapters/codex/` へ修正。既存テスト3+14+1件成功。ChatGPT/スマホ/通常Codex quotaの残確認は未完のまま。次はPRレビューとDraftの残検証。
 
 ## 2026-11-01 関連6リポジトリのブランチ整理
 
