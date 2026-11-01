@@ -1,5 +1,7 @@
 # ワークスペース共通タスク台帳
 
+- SKILL-REPO-01: DONE。Owner: agent。2026-11-02: setup統合、repo責務分離、source/runtime分類、親子READMEの書き分け、PR/main監査、repo別の完了報告を `.agents/skills/repo-delivery/SKILL.md` に集約。日本語のdescriptionに対象タスクと除外範囲を記述。skill-creator quick_validate成功。AGENTS.mdの詳細な常時指示をSkillへの案内に置換。
+
 - PR-02: DONE。2026-11-01: setup #8 / dotfiles #4 / agent-workspace #1のmergeをGitHub APIで確認。各ローカルをmaster/mainへfast-forwardし、統合済み作業ブランチ3本を削除。リモート側も削除済みでfetch --prune反映済み。PR-01の提出物はすべて主ブランチへ統合済み。未実機検証の項目はmerge後も未完了として維持する。
 
 - LLM-05: DONE。2026-11-01: PR #1から旧パス用のLLM互換ラッパー2本を削除。起動スクリプトの正本とPATH入口は独立した~/llm・~/binに一本化。workspaceには移設案内を残す。以下のLLM-04/過去ログの互換入口保持は移設時の記録。

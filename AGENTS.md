@@ -4,7 +4,7 @@
 
 - 人間向けの概要は `README.md`、詳細なポリシーは `.agents/docs/`。
 - **新規セッション開始時**: `.agents/docs/TASKS.md` と `.agents/docs/HANDOFF.md` を読み、未完了・ブロッカー・次の手順を確認する。タスク管理は `.agents/docs/TASK_POLICY.md` に従う。
-- OS/WSL、外部リポジトリの取得、Koofrの人間向け導入手順は `natsume6075/setup`。Codexの依存関係・インストールはこのリポジトリの `setup.sh`。`setup` の新規変更は `feat/add-agent-harness` でレビューし、既存動作を壊さない。
+- setup統合や複数repoの納品確認では `.agents/skills/repo-delivery/SKILL.md` を参照する。OS/WSL・外部repo取得の正本は `natsume6075/setup`、Codexの依存・導入の正本はこのrepoの `setup.sh`。
 - このリポジトリにはプロジェクト固有の指示・Skills・Codex等の設定、計画、進捗、Gitで扱う成果物を置く。
 - 共通Skillsは `.agents/skills/`、Codex固有設定は `.codex/`。他のハーネス固有設定は必要になってから追加する。架空の設定や未検証の機能に依存しない。
 - Git操作前にブランチ、差分、未コミット変更を確認する。人の既存データを上書きしない。小さくテスト可能な差分を優先する。
