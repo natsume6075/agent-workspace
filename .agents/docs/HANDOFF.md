@@ -1,5 +1,12 @@
 # Codex / ハンズオフ
 
+## 2026-11-02 Repository delivery skill
+
+- ユーザー指示: setup統合やrepoベースの作業完了時に、repo間の分離/責務、Git対象とruntime product、親子READMEの責任、setup y/n導線、PR merge、生成物監査を再現可能にする。常時コンテキストを増やさずSkillとして必要時だけ読み込む。
+- `.agents/skills/repo-delivery/SKILL.md` を作成。日本語descriptionに発火対象と除外対象を記述。AGENTS.mdの常時指示を短いSkill案内へ置換。
+- skill-creatorの `quick_validate.py` 成功。
+- 次の一手: setup統合または複数repo作業の終端でSkillの選択・適用を観察し、不足した判断だけを更新する。
+
 ## 2026-11-01 全PRマージ後の同期完了
 
 - setup #8 / dotfiles #4 / agent-workspace #1はすべてmerge済み（API確認）。setup master `e31a955`、dotfiles master `37850c0`、workspace main `b8cfbfe`へローカルをfast-forwardした。
